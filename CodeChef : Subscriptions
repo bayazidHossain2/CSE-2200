@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+///Problem link : https://www.codechef.com/JUNE221D/problems/SUBSCRIBE_
+int main(){
+    int T;
+    cin>>T;
+    while(T--){
+        int x,n;
+        cin>>n>>x;
+        int g=n/6;
+        if(n%6){
+            g++;
+        }cout<<g*x<<endl;
+    }return 0;
+}
