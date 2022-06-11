@@ -1,0 +1,22 @@
+#include<iostream>
+#include<set>
+using namespace std;
+///Problem link : https://www.codechef.com/JUNE221D/problems/EQUALSTRING
+int main(){
+    int T;
+    cin>>T;
+    while(T--){
+        string a;
+        int n;
+        cin>>n>>a;
+        char ch;
+        set<char> distC;
+        for(int i=0;i<n;i++){
+            cin>>ch;
+            if(ch!=a[i]){
+                distC.insert(ch);
+            }
+        }
+        cout<<distC.size()<<endl;
+    }return 0;
+}
