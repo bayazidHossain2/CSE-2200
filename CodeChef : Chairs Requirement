@@ -1,0 +1,14 @@
+#include<iostream>
+using namespace std;
+///Problem link : https://www.codechef.com/JUNE221D/problems/CHAIRS_
+int main(){
+    int T;
+    cin>>T;
+    while(T--){
+        int x,y;
+        cin>>x>>y;
+        if(x>=y){
+            cout<<x-y<<endl;
+        }else cout<<0<<endl;
+    }return 0;
+}
