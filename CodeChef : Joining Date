@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+///Problem link : https://www.codechef.com/submit-v2/JOINING
+int main(){
+    int T;
+    cin>>T;
+    while(T--){
+        int n,k;
+        cin>>n>>k;
+        int gn=n/5;
+        if(n%5){
+            gn++;
+        }
+        int kgn=k/5;
+        if(k%5){
+            kgn++;
+        }
+        cout<<gn-kgn<<endl;
+    }return 0;
+}
