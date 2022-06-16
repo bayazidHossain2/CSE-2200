@@ -1,0 +1,31 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+///Problem link : https://www.codechef.com/submit-v2/DISPAL
+int main(){
+    int T;
+    cin>>T;
+    while(T--){
+        int n,x;
+        cin>>n>>x;
+        int pdc=(n+1)/2;
+        if(pdc<x){
+            cout<<-1<<endl;
+        }else{
+            vector<char> rev;
+            for(int i=0;i<pdc;i++){
+                rev.push_back(char((('a'+i)%x)+'a'));
+                cout<<char((('a'+i)%x)+'a');
+
+            }
+            int p=rev.size()-1;
+            if(n&1){
+                p--;
+            }
+            for(;p>=0;p--){
+                cout<<rev[p];
+            }
+            cout<<endl;
+        }
+    }return 0;
+}
