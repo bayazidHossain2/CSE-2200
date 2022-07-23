@@ -1,0 +1,30 @@
+//problem link : https://toph.co/p/gpu-business
+#include <iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+int main() {
+	int T;
+	cin>>T;
+	while(T--){
+	    int N,M;
+	    cin>>N>>M;
+	    vector<int> vecN(N),vecM(M);
+	    for(int i=0;i<N;i++){
+            cin>>vecN[i];
+	    }
+	    for(int i=0;i<M;i++){
+            cin>>vecM[i];
+	    }
+	    sort(vecN.begin(),vecN.end());
+	    sort(vecM.rbegin(),vecM.rend());
+	    long long profit=0;
+	    for(int i=0;i<min(N,M);i++){
+            if(vecN[i]>=vecM[i]){
+                break;
+            }profit+=(vecM[i]-vecN[i]);
+	    }cout<<profit<<endl;
+	}
+	return 0;
+}
