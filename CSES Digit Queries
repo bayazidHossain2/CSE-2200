@@ -1,0 +1,44 @@
+//problem link : https://cses.fi/problemset/task/2431/
+#include<iostream>
+#include<vector>
+#include<math.h>
+using namespace std;
+
+int main(){
+    vector<long long> range;
+    for(int i=0;i<17;i++){
+        int p=i;
+        long long num=9;
+        while(p--){
+            num*=10;
+        }range.push_back(num*(i+1));
+        //cout<<range.back()<<endl;
+    }
+    int Q;
+    cin>>Q;
+    long long q;
+    while(Q--){
+        cin>>q;
+        long long number=0;
+        long long num=0;
+        int mod=0;
+        for(int i=0;i<range.size();i++){
+            if(q>range[i]){
+                q-=range[i];
+                num+=(range[i]/(i+1));
+            }else{
+                q+=i;
+                mod=(i)-q%(i+1);
+                q/=(i+1);
+                q+=num;
+                while(mod--){
+                    q/=10;
+                }
+                break;
+            }
+        }cout<<q%10<<endl;
+    }
+
+    return 0;
+}
+
