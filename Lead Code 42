@@ -1,0 +1,26 @@
+class Solution {
+public:
+    int trap(vector<int>& height) {
+        vector<int> left(height.size());
+        vector<int> right(height.size());
+        long long before_sum=0;
+        for(int i=0;i<height.size();i++){
+            before_sum+=height[i];
+        }
+        int mx=0;
+        for(int i=0;i<height.size();i++){
+            mx=max(mx,height[i]);
+            left[i]=mx;
+        }
+        mx=0;
+        for(int i=height.size()-1;i>=0;i--){
+            mx=max(mx,height[i]);
+            right[i]=mx;
+        }
+        long long after_sum=0;
+        for(int i=0;i<height.size();i++){
+            //cout<<left[i]<<' '<<right[i]<<endl;
+            after_sum+=min(left[i],right[i]);
+        }return after_sum-before_sum;
+    }
+};
